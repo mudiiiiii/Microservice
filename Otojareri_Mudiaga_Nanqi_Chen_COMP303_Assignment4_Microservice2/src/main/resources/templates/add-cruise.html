@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Add A Cruise</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+    <form action="#" th:action="@{/addCruise}" th:object="${cruise}" method="post">
+    
+    <table align="center" cellpadding = "6">
+    
+    
+    
+    <tr>
+	    <td>
+	    
+	    <label for="cruiseDestination">Cruise Destination: </label>
+	    <input type="text" th:field="*{cruiseDestination}" id="cruiseDestination">
+	    <span th:if="${#fields.hasErrors('cruiseDestination')}" th:errors="*{cruiseDestination}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	    <label for="cruiseLine">Cruise Line: </label>
+	    <input type="text" th:field="*{cruiseLine}" id="cruiseLine">
+	    <span th:if="${#fields.hasErrors('cruiseLine')}" th:errors="*{cruiseLine}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	    <label for="departureDate">Departure Date: </label>
+	    <input type="text" th:field="*{departureDate}" id="departureDate">
+	    <span th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	    <label for="visitingPlaces">Places to Visit: </label>
+	    <input type="text" th:field="*{visitingPlaces}" id="visitingPlaces">
+	    <span th:if="${#fields.hasErrors('visitingPlaces')}" th:errors="*{visitingPlaces}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	    <label for="duration">Cruise Duration: </label>
+	    <input type="text" th:field="*{duration}" id="duration">
+	    <span th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	    <label for="Price">Cruise Price: </label>
+	    <input type="text" th:field="*{Price}" id="Price">
+	    <span th:if="${#fields.hasErrors('Price')}" th:errors="*{Price}"></span>
+	    
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td>
+	    
+	   		<input type="submit" value="Add Cruise">
+	    
+	    </td>
+    </tr>
+
+    </table>
+    
+         
+    
+
+</form> 
+</body>
+</html>

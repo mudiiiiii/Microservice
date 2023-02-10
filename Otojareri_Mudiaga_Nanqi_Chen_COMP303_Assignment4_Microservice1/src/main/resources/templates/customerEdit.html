@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer details Edit</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+<div align = "center">
+<h1>Editing your customer details below</h1>
+<hr>
+
+<form action="#" th:action="@{/cusUpdate/{id}(id=*{custID})}" th:object="${customer}" method="post">  
+        	<h2>Change your customer info</h2>
+        	<div id="formpage"> 
+            <table class="table"> 
+           <tr>
+                	<td><h3><label for="firstName">First Name</label></h3></td>  
+               	    <td><input type="text" th:field="*{firstName}" id="firstName" placeholder="firstName"><td>
+    				<td><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><td>
+                </tr>
+                <tr>  
+                    <td><h3><label for="lastName">Last Name</label></h3></td>  
+               	    <td><input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName"><td>
+    				<td><span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><td>
+                </tr>  
+                <tr>
+                	<td><h3><label for="address">address</label></h3></td>  
+               	    <td><input type="text" th:field="*{address}" id="address" placeholder="address"><td>
+    				<td><span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span><td>  
+
+                </tr>  
+                <tr>  
+                    <td><h3><label for="city">city</label></h3></td>  
+               	    <td><input type="text" th:field="*{city}" id="city" placeholder="city"><td>
+    				<td><span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span><td>    
+                </tr>  
+                <tr>  
+                    <td><h3><label for="country">country</label></h3></td>  
+               	    <td><input type="text" th:field="*{country}" id="country" placeholder="country"><td>
+    				<td><span th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></span><td>  
+                </tr> 
+                <tr>  
+                    <td><h3><label for="phone">phone</label></h3></td>  
+               	    <td><input type="text" th:field="*{phone}" id="phone" placeholder="phone"><td>
+    				<td><span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span><td>
+                </tr> 
+                <tr>  
+                    <td><h3><label for="email">email</label></h3></td>  
+               	    <td><input type="text" th:field="*{email}" id="email" placeholder="email"><td>
+    				<td><span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><td>  
+                </tr>
+                <tr>  
+                    <td>
+	                    <div class="button-center">
+		                    <input id = "btn" type="submit" value="Update"></input>
+	                    </div>
+                    </td>  
+                </tr> 
+            </table>
+           	</div>
+        </form>  
+        </div>
+</body>
+</html>
